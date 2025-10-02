@@ -1,4 +1,5 @@
 local opt = vim.opt -- for conciseness
+vim.g.mapleader = " "
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
@@ -38,3 +39,9 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- set conceal level for visual plugins
+opt.conceallevel = 2
+
+-- add a line at 81 characters
+opt.colorcolumn = "81"

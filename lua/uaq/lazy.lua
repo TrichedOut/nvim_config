@@ -20,5 +20,3 @@ require("lazy").setup({ { import = "uaq.plugins" }, { import = "uaq.plugins.lsp"
     notify = false,
   },
 })
-
-require('telescope').load_extension 'remote-sshfs'

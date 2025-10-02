@@ -1,14 +1,3 @@
-local function get_arduino_cmd()
-  return {
-    "arduino-language-server",
-    "-cli", "/opt/homebrew/bin/arduino-cli",
-    "-cli-config", "/Users/uaq/Library/Arduino15/arduino-cli.yaml",
-    "-fqbn", "arduino:renesas_uno:unor4wifi",
-    "-clangd", "/usr/bin/clangd"
-  }
-end
-
-
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -80,12 +69,7 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
-
-    lspconfig.arduino_language_server.setup {
-      capabilities = capabilities,
-      cmd = get_arduino_cmd()
-    }
-
+    
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
