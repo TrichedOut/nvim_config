@@ -26,5 +26,36 @@ return {
         separator_style = "slant",
       },
     },
+  },
+
+  {
+    "snacks.nvim",
+    keys = {
+      { "<leader>e", function() Snacks.explorer({
+        hidden = true,
+        ignored = true,
+        exclude = {
+          "**.gd.uid",
+          "**.cache*",
+          "**.git*",
+        },
+        include = {
+        }
+      }) end, desc="Explorer"},
+
+      { "<leader>E", false },
+    },
+    opts = {
+      scroll = { enabled = false },
+      dashboard = { enabled = false },
+      words = { enabled = false },
+      notifier = { enabled = false },
+      picker = { }
+    },
+  },
+
+  {
+    "folke/flash.nvim",
+    enabled = false,
   }
 }
